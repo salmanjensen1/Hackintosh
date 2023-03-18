@@ -3,9 +3,6 @@ const cors = require('cors')
 
 const app = express()
 
-app.use(cors())
-
-const PORT = process.env.PORT || 1337;
 
 app.get('/', (req, res)=>{
     res.json("Harder than getting on top of Everest")
@@ -29,6 +26,9 @@ app.get('/books', (req, res) => {
     }
   ])
 })
+
+
+const PORT = process.env.PORT || 1337;
 
 app.listen(PORT, ()=>{
     console.log(`Server running at port: ${PORT}`)
