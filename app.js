@@ -5,9 +5,13 @@ const app = express()
 
 app.use(cors())
 
-app.get('/', (req,res)=>{
-    res.json("hello world")
+const PORT = process.env.PORT || 1337;
+
+app.get('/', (req, res)=>{
+    res.json("Harder than getting on top of Everest")
 })
+
+
 
 app.get('/books', (req, res) => {
   res.json([
@@ -26,6 +30,6 @@ app.get('/books', (req, res) => {
   ])
 })
 
-app.listen(8000, () => {
-  console.log('listening for requests on port 8000')
+app.listen(PORT, ()=>{
+    console.log(`Server running at port: ${PORT}`)
 })
