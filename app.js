@@ -5,7 +5,11 @@ const app = express()
 
 app.use(cors())
 
-app.get('/', (req, res) => {
+app.get('/', (req,res)=>{
+    res.json("hello world")
+})
+
+app.get('/books', (req, res) => {
   res.json([
     {
       "id":"1",
@@ -23,5 +27,5 @@ app.get('/', (req, res) => {
 })
 
 app.listen(8000, () => {
-  console.log('listening for requests on port 4000')
+  console.log('listening for requests on port 8000')
 })
